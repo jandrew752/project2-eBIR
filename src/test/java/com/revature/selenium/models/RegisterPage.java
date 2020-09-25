@@ -3,25 +3,29 @@ package com.revature.selenium.models;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage {
+public class RegisterPage {
 	private static String base_url = "http://52.205.93.132:8006/eBIRProject/";
 	private WebDriver webdriver;
 	
 	private WebElement header;
 	private WebElement usernameInput;
 	private WebElement passInput;
-	private WebElement loginBtn;
+	private WebElement cPassInput;
+	private WebElement fNameInput;
+	private WebElement lNameInput;
+	private WebElement emailInput;
 	private WebElement regBtn;
+	private WebElement toLoginBtn;
 	
-	public LoginPage(WebDriver wd) {
+	public RegisterPage(WebDriver wd) {
 		this.webdriver = wd;
 		this.navTo();
 	}
 	
 	// second constructor in case we do need to set env var
-	public LoginPage(WebDriver wd, String base_url) {
+	public RegisterPage(WebDriver wd, String base_url) {
 		this.webdriver = wd;
-		LoginPage.base_url = base_url;
+		RegisterPage.base_url = base_url;
 		this.navTo();
 	}
 	
@@ -40,14 +44,35 @@ public class LoginPage {
 	public String getPassword() {
 		return passInput.getAttribute("value");
 	}
+	
+	public String getConfirmPassword() {
+		return cPassInput.getAttribute("value");
+	}
+	
+	public String fNameInput() {
+		return fNameInput.getAttribute("value");
+	}
+	
+	public String lNameInput() {
+		return lNameInput.getAttribute("value");
+	}
 
+	public String emailInput() {
+		return emailInput.getAttribute("value");
+	}
+	
 	public void setPassword(String password) {
 		this.passInput.clear();
 		this.passInput.sendKeys("password");
 	}
+	
 
 	public void submit() {
-		this.loginBtn.click();
+		this.regBtn.click();
+	}
+	
+	public void toLogin() {
+		this.toLoginBtn.click();
 	}
 	
 	// just nav to base since it redirects to login page anyways
