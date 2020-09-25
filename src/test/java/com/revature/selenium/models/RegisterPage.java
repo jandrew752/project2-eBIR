@@ -49,15 +49,15 @@ public class RegisterPage {
 		return cPassInput.getAttribute("value");
 	}
 	
-	public String fNameInput() {
+	public String getFirstname() {
 		return fNameInput.getAttribute("value");
 	}
 	
-	public String lNameInput() {
+	public String getLastname() {
 		return lNameInput.getAttribute("value");
 	}
 
-	public String emailInput() {
+	public String getEmail() {
 		return emailInput.getAttribute("value");
 	}
 	
@@ -66,6 +66,25 @@ public class RegisterPage {
 		this.passInput.sendKeys("password");
 	}
 	
+	public void setConfirmPassword(String cPassword) {
+		this.cPassInput.clear();
+		this.cPassInput.sendKeys("cPassword");
+	}
+	
+	public void setFirstName(String firstname) {
+		this.fNameInput.clear();
+		this.fNameInput.sendKeys("firstname");
+	}
+	
+	public void setLastName(String lastname) {
+		this.lNameInput.clear();
+		this.lNameInput.sendKeys("lastname");
+	}
+	
+	public void setEmail(String email) {
+		this.emailInput.clear();
+		this.emailInput.sendKeys("email");
+	}
 
 	public void submit() {
 		this.regBtn.click();

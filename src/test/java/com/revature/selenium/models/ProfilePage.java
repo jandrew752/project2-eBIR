@@ -1,5 +1,8 @@
 package com.revature.selenium.models;
 
-public class ProfilePage {
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
+public class ProfilePage {
+	
 }
